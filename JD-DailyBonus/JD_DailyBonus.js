@@ -46,7 +46,12 @@ var Key = ''; //该参数已废弃; 仅用于下游脚本的兼容, 请使用jso
 
 var DualKey = ''; //该参数已废弃; 仅用于下游脚本的兼容, 请使用json串数据  ↓
 
-var OtherKey = ``; //无限账号Cookie json串数据, 请严格按照json格式填写, 具体格式请看以下样例:
+var OtherKey =  `[{
+  "cookie": "pt_key=AAJhOCntADABsOgYzEDgtRyGnD7f03okJv_rT57Z4QNHJVFvT6WZ5Kba8hOFRxjO33Co7HuSDzg;pt_pin=jd_7743c0d9c6973;"
+}, {
+  "cookie": "pt_key=yyy;pt_pin=xxx;",
+  "jrBody": "reqData=xxx"
+}]`; //无限账号Cookie json串数据, 请严格按照json格式填写, 具体格式请看以下样例:
 
 /*以下样例为双账号("cookie"为必须,其他可选), 第一个账号仅包含Cookie, 第二个账号包含Cookie和金融签到Body: 
 
@@ -56,6 +61,7 @@ var OtherKey = `[{
   "cookie": "pt_key=yyy;pt_pin=xxx;",
   "jrBody": "reqData=xxx"
 }]`
+
 
    注1: 以上选项仅针对于JsBox或Node.js, 如果使用QX,Surge,Loon, 请使用脚本获取Cookie.
    注2: 多账号用户抓取"账号1"Cookie后, 请勿点击退出账号(可能会导致Cookie失效), 需清除浏览器资料或更换浏览器登录"账号2"抓取.
